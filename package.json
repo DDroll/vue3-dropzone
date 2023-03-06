@@ -1,5 +1,5 @@
 {
-  "name": "vue-dropzone-vue3",
+  "name": "dropzone-vue3",
   "description": "Vue3 port of vue2-dropzone A wrapper around Dropzone.js for Vue 3",
   "version": "1.0.0",
   "license": "MIT",
@@ -7,7 +7,8 @@
     "vue3",
     "dropzone",
     "vue3-dropzone",
-    "vue2-dropzone-vue3"
+    "vue2-dropzone-vue3",
+    "dropzone-vue3"
   ],
   "author": "Sukh Randhawa",
   "scripts": {
