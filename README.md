@@ -15,11 +15,11 @@ A Vue component for file uploads, powered by [Dropzone.js](http://www.dropzonejs
 npm install
 
 # install vue-dropzone
-npm install vue-dropzone-vue3
+npm install dropzone-vue3
 
 (or with yarn)
 
-yarn add vue-dropzone-vue3
+yarn add dropzone-vue3
 ```
 
 ## Usage
@@ -53,6 +53,6 @@ export default {
 }
 ```
 
-[![NPM](https://img.shields.io/npm/v/vue-dropzone-vue3)](https://www.npmjs.com/package/vue-dropzone-vue3)
+[![NPM](https://img.shields.io/npm/v/dropzone-vue3)](https://www.npmjs.com/package/dropzone-vue3)
 [![vue3](https://img.shields.io/badge/vue-3.x-brightgreen.svg)](https://vuejs.org/)
-[![NPM Downloads](https://img.shields.io/npm/dm/vue-dropzone-vue3)](https://www.npmjs.com/package/vue-dropzone-vue3)
+[![NPM Downloads](https://img.shields.io/npm/dm/dropzone-vue3)](https://www.npmjs.com/package/dropzone-vue3)
