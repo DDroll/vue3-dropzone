@@ -1,0 +1,38 @@
+{
+  "name": "vue-dropzone-vue3",
+  "description": "Vue3 port of vue2-dropzone A wrapper around Dropzone.js for Vue 3",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "vue3",
+    "dropzone",
+    "vue3-dropzone",
+    "vue2-dropzone-vue3"
+  ],
+  "author": "Sukh Randhawa",
+  "scripts": {
+    "build": "babel src/index.js -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sukh-idgateway/vue3-dropzone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sukh-idgateway/vue3-dropzone/issues"
+  },
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=12"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "core-js": "^3.21.1",
+    "vue": ">=3.0.0"
+  },
+  "dependencies": {
+    "dropzone": "^6.0.0-beta.2"
+  },
+  "types": "./src/index.d.ts",
+  "homepage": "https://github.com/sukh-idgateway/vue3-dropzone#readme",
+  "devDependencies": {}
+}
