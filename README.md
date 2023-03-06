@@ -33,7 +33,7 @@ yarn add dropzone-vue3
   />
 </template>  
 <script>
-import vueDropzone from 'vue2-dropzone-vue3'
+import vueDropzone from 'dropzone-vue3'
 
 export default {
   components: {

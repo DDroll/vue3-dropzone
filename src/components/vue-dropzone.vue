@@ -1,12 +1,12 @@
 <template>
   <div
-    :id="id"
-    ref="dropzoneElement"
-    :class="{ 'vue-dropzone dropzone': includeStyling }"
+      :id="id"
+      ref="dropzoneElement"
+      :class="{ 'vue-dropzone dropzone': includeStyling }"
   >
     <div
-      v-if="useCustomSlot"
-      class="dz-message"
+        v-if="useCustomSlot"
+        class="dz-message"
     >
       <slot>Drop files here to upload</slot>
     </div>
@@ -127,8 +127,8 @@ export default {
     this.hasBeenMounted = true
 
     this.dropzone = new Dropzone(
-      this.$refs.dropzoneElement,
-      this.dropzoneSettings
+        this.$refs.dropzoneElement,
+        this.dropzoneSettings
     )
 
     this.dropzone.on('thumbnail', (file, dataUrl) => {
@@ -139,10 +139,10 @@ export default {
       if (this.duplicateCheck && this.dropzone.getQueuedFiles().length) {
         this.getQueuedFiles().forEach(existingFile => {
           if (
-            existingFile.name === file.name &&
-            existingFile.size === file.size &&
-            existingFile.lastModifiedDate.toString() === file.lastModifiedDate.toString() &&
-            existingFile.dataUrl === file.dataUrl
+              existingFile.name === file.name &&
+              existingFile.size === file.size &&
+              existingFile.lastModifiedDate.toString() === file.lastModifiedDate.toString() &&
+              existingFile.dataUrl === file.dataUrl
           ) {
             this.removeFile(file)
             this.$emit('vdropzone-duplicate-file', file)
@@ -172,8 +172,8 @@ export default {
       if (this.isS3) {
         if (this.isS3OverridesServerPropagation) {
           let xmlResponse = new window.DOMParser().parseFromString(
-            response,
-            'text/xml'
+              response,
+              'text/xml'
           )
           let s3ObjectLocation = xmlResponse.firstChild.children[0].innerHTML
           this.$emit('vdropzone-s3-upload-success', s3ObjectLocation)
@@ -253,10 +253,10 @@ export default {
 
     this.dropzone.on('totaluploadprogress', (totaluploadprogress, totalBytes, totalBytesSent) => {
       this.$emit(
-        'vdropzone-total-upload-progress',
-        totaluploadprogress,
-        totalBytes,
-        totalBytesSent
+          'vdropzone-total-upload-progress',
+          totaluploadprogress,
+          totalBytes,
+          totalBytesSent
       )
     })
 
@@ -323,29 +323,29 @@ export default {
       this.dropzone.emit('addedfile', file)
       let containsImageFileType = false
       if (
-        fileUrl.indexOf('.svg') > -1 ||
-        fileUrl.indexOf('.png') > -1 ||
-        fileUrl.indexOf('.jpg') > -1 ||
-        fileUrl.indexOf('.jpeg') > -1 ||
-        fileUrl.indexOf('.gif') > -1 ||
-        fileUrl.indexOf('.webp') > -1
+          fileUrl.indexOf('.svg') > -1 ||
+          fileUrl.indexOf('.png') > -1 ||
+          fileUrl.indexOf('.jpg') > -1 ||
+          fileUrl.indexOf('.jpeg') > -1 ||
+          fileUrl.indexOf('.gif') > -1 ||
+          fileUrl.indexOf('.webp') > -1
       )
         containsImageFileType = true
       if (
-        this.dropzone.options.createImageThumbnails &&
-        containsImageFileType &&
-        file.size <= this.dropzone.options.maxThumbnailFilesize * 1024 * 1024
+          this.dropzone.options.createImageThumbnails &&
+          containsImageFileType &&
+          file.size <= this.dropzone.options.maxThumbnailFilesize * 1024 * 1024
       ) {
         fileUrl && this.dropzone.emit('thumbnail', file, fileUrl)
 
         let thumbnails = file.previewElement.querySelectorAll(
-          '[data-dz-thumbnail]'
+            '[data-dz-thumbnail]'
         )
         for (let i = 0; i < thumbnails.length; i++) {
           thumbnails[i].style.width =
-            this.dropzoneSettings.thumbnailWidth + 'px'
+              this.dropzoneSettings.thumbnailWidth + 'px'
           thumbnails[i].style.height =
-            this.dropzoneSettings.thumbnailHeight + 'px'
+              this.dropzoneSettings.thumbnailHeight + 'px'
           thumbnails[i].style['object-fit'] = 'contain'
         }
       }
@@ -438,9 +438,9 @@ export default {
     },
     getSignedAndUploadToS3 (file) {
       let promise = awsEndpoint.sendFile(
-        file,
-        this.aws,
-        this.isS3OverridesServerPropagation
+          file,
+          this.aws,
+          this.isS3OverridesServerPropagation
       )
       if (!this.isS3OverridesServerPropagation) {
         promise.then(response => {
@@ -453,8 +453,8 @@ export default {
               this.$emit('vdropzone-s3-upload-error', response.message)
             } else {
               this.$emit(
-                'vdropzone-s3-upload-error',
-                'Network Error : Could not send request to AWS. (Maybe CORS error)'
+                  'vdropzone-s3-upload-error',
+                  'Network Error : Could not send request to AWS. (Maybe CORS error)'
               )
             }
           }
@@ -560,15 +560,6 @@ export default {
 
 .vue-dropzone > .dz-preview:hover .dz-remove {
   opacity: 1;
-}
-
-.vue-dropzone > .dz-preview .dz-success-mark,
-.vue-dropzone > .dz-preview .dz-error-mark {
-  margin-left: auto;
-  margin-top: auto;
-  width: 100%;
-  top: 35%;
-  left: 0;
 }
 
 .vue-dropzone > .dz-preview .dz-success-mark svg,
